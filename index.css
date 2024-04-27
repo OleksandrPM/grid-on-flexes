@@ -1,0 +1,83 @@
+:root {
+  --container-width: 90%;
+
+  /* grid`s properties */
+  --column-gap: 20px;
+  --row-gap: 20px;
+  --number-in-row: 3;
+
+  /* card shadow */
+  --card-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: var(--container-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  text-align: center;
+}
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+.card-list {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: var(--row-gap);
+
+  /* column gap`s compensator */
+  margin-left: calc(-1 * var(--column-gap));
+}
+
+.card-list > .item {
+  flex-basis: calc((100% / var(--number-in-row) - var(--column-gap)));
+
+  /* column gap */
+  margin-left: var(--column-gap);
+}
+
+.card {
+  height: 100%;
+
+  overflow: hidden;
+  border-radius: 5px;
+  border: 1px solid black;
+  box-shadow: var(--card-shadow);
+}
+
+.card-content {
+  padding: 10px;
+}
+
+.card-title {
+  margin-bottom: 10px;
+}
+
+.card-text {
+  text-align: left;
+}
